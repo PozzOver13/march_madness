@@ -12,3 +12,7 @@ https://www.kaggle.com/datasets/andrewsundberg/college-basketball-dataset/data C
 
 https://arxiv.org/abs/2007.10550 Modeling Player and Team Performance in Basketball  
 https://arxiv.org/abs/2308.14339 Entropy-Based Strategies for Multi-Bracket Pools
+
+## Libraries
+
+- [NCAA](Libraries/ncaa/README.md) - Library for the necessary code and functions
