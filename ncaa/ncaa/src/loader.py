@@ -1,7 +1,7 @@
-
+import polars as pl
 
 class Loader:
     def load_data(self, path):
-        print(f'Loading data from {path}')
+        df = pl.read_csv(path, separator=',')
 
-        return f'Loading data from {path}'
+        return df
