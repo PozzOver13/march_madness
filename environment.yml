@@ -1,0 +1,8 @@
+name: ncaa_env_3.9
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - poetry=1.8.2

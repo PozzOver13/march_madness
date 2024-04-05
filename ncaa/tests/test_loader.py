@@ -1,7 +1,6 @@
 import os
 
 from ncaa.src.loader import Loader
-
 from ncaa.src.config.general import PATH_DATA_RAW
 
 
