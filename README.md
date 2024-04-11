@@ -16,3 +16,12 @@ https://arxiv.org/abs/2308.14339 Entropy-Based Strategies for Multi-Bracket Pool
 ## Libraries
 
 - [NCAA](Libraries/ncaa/README.md) - Library for the necessary code and functions to compile a bracket for the NCAA tournament
+
+## Learning opportunities
+
+This repository is a great opportunity to learn several libraries and predictive models using the NCAA basketball tournament data.  
+The following libraries and models has been used in this repository:
+- [x] Polars
+- [x] Poetry
+- [x] FastAPI
+- [x] Pydantic
