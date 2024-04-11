@@ -1,9 +1,20 @@
 from fastapi import FastAPI
+from pydantic import BaseModel, Field
 
-from ncaa.api import get_top_3_wins, get_wins_by_team
+from ncaa.api import get_top_3_wins, get_wins_by_team, get_winner
+
+
+class Matchup(BaseModel):
+    team: str = Field(...,
+                      title="Team",
+                      description="The team to compare",
+                      min_length=1)
+    team_opponent: str = Field(...,
+                               title="Team Opponent",
+                               description="The team to compare against",
+                               min_length=1)
 
 app = FastAPI()
-
 
 @app.get("/")
 async def root():
@@ -16,3 +27,7 @@ async def top_3_wins():
 @app.get("/wins_by_team")
 async def wins_by_team(team: str):
     return get_wins_by_team(team)
+
+@app.post("/who_wins")
+async def who_wins(matchup: Matchup):
+    return get_winner(matchup)
