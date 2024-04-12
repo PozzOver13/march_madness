@@ -1,18 +1,7 @@
 from fastapi import FastAPI
-from pydantic import BaseModel, Field
 
-from ncaa.api import get_top_3_wins, get_wins_by_team, get_winner
-
-
-class Matchup(BaseModel):
-    team: str = Field(...,
-                      title="Team",
-                      description="The team to compare",
-                      min_length=1)
-    team_opponent: str = Field(...,
-                               title="Team Opponent",
-                               description="The team to compare against",
-                               min_length=1)
+from ncaa.api_endpoint import get_top_3_wins, get_wins_by_team, get_winner
+from ncaa.src.config.io_class import Matchup
 
 app = FastAPI()
 

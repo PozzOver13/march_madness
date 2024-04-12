@@ -59,3 +59,10 @@ def test_who_wins_team_empty():
     response = client.post("/who_wins", json={"team": "", "team_opponent": "Connecticut"})
     assert response.status_code == 422
     assert response.json()["detail"][0]["msg"] == "String should have at least 1 character"
+
+def test_who_wins_team_nba():
+    client = TestClient(app)
+
+    response = client.post("/who_wins", json={"team": "Los Angeles Lakers", "team_opponent": "Connecticut"})
+    assert response.status_code == 422
+    assert response.json()["detail"][0]["msg"] == "Value error, Team or opponent not allowed"

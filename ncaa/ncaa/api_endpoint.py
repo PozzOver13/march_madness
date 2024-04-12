@@ -1,14 +1,11 @@
 import os
 import polars as pl
-from pydantic import BaseModel
 
+from ncaa.src.config.io_class import Matchup, MatchupOutput
 from ncaa.src.error_handler import check_team_string_not_empty
 from ncaa.src.loader import Loader
 from ncaa.src.config.general import PATH_DATA_RAW
 
-class MatchupWinner(BaseModel):
-    team: str
-    wins: int
 
 def get_top_3_wins():
     loader = Loader()
@@ -60,7 +57,7 @@ def get_wins_by_team(team: str):
     return team_wins
 
 
-def get_winner(item):
+def get_winner(item: Matchup):
     loader = Loader()
     path_file = os.path.join(PATH_DATA_RAW, 'kaggle', 'cbb.csv')
     df = loader.load_data(path_file)
@@ -96,4 +93,4 @@ def get_winner(item):
     else:
         res = {"team": item.team_opponent, "wins": team_opp_wins['wins'].values[0]}
 
-    return MatchupWinner(**res)
+    return MatchupOutput(**res)

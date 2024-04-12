@@ -15,7 +15,7 @@ https://arxiv.org/abs/2308.14339 Entropy-Based Strategies for Multi-Bracket Pool
 
 ## Libraries
 
-- [NCAA](Libraries/ncaa/README.md) - Library for the necessary code and functions to compile a bracket for the NCAA tournament
+- [NCAA](ncaa/README.md) - Library for the necessary code and functions to compile a bracket for the NCAA tournament
 
 ## Learning opportunities
 
